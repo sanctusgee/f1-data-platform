@@ -154,10 +154,6 @@ The platform follows professional Python packaging standards with clear separati
 
 ## Testing
 
-Here's a blurb for your README:
-
-## Testing
-
 This project uses dbt's built-in testing framework to ensure data quality and model integrity.
 
 ### Running Tests
