@@ -1,0 +1,26 @@
+.target/
+logs
+build
+node_modules
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.log
+
+# Rust
+/target/
+
+# Build artifacts
+build/
+dist/
+
+# VS Code, PyCharm
+.vscode/
+.idea/
+
+# Env
+.env
+.venv/

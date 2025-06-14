@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_lap_times
+    description: "Clean lap timing data with standardized formats"
+    columns:
+      - name: race_id
+        tests:
+          - not_null
+      - name: driver_id
+        tests:
+          - not_null
+      - name: lap_time_ms
+        tests:
+          - not_null
+      - name: lap
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 100
+
+  - name: stg_pit_stops
+    description: "Clean pit stop data with duration in milliseconds"
+    columns:
+      - name: pit_duration_ms
+        tests:
+          - not_null

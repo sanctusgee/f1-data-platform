@@ -1,0 +1,30 @@
+name: 'f1_analytics'
+version: '1.0'
+config-version: 2
+
+profile: 'f1_analytics'
+
+model-paths: ['models']
+seed-paths: ['seeds']
+macro-paths: ['macros']
+test-paths: ['tests']
+snapshot-paths: []
+
+models:
+  f1_analytics:
+    +materialized: view
+
+    staging:
+      +materialized: ephemeral
+      +schema: staging
+
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+
+    marts:
+      +materialized: table
+      +schema: marts
+    analytics:
+      +materialized: table
+      +schema: marts

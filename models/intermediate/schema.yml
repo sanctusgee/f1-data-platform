@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: int_stint_segmentation
+    description: "Tire stint detection with pit stop logic"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - race_id
+            - driver_id
+            - lap
+    columns:
+      - name: stint_number
+        description: "Sequential stint number per driver per race"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 10  # No driver should have >10 stints
+
+      - name: pitted
+        description: "Boolean flag for pit stop"
+        tests:
+          - accepted_values:
+              values: [0, 1]

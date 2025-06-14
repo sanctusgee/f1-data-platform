@@ -1,0 +1,39 @@
+#file: models/staging/_sources.yml
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw F1 data from ingestion pipeline"
+    schema: public
+    tables:
+      - name: raw_lap_times
+        description: "Raw lap timing data from Jolpica API"
+        columns:
+          - name: race_id
+            description: "Unique race identifier (season_round format)"
+          - name: driver_id
+            description: "Driver identifier from API"
+          - name: lap_number
+            description: "Sequential lap number"
+          - name: time
+            description: "Lap time in string format (MM:SS.sss)"
+          - name: position
+            description: "Track position during this lap"
+          - name: circuit
+            description: "Circuit name where race took place"
+
+      - name: raw_pit_stops
+        description: "Raw pit stop data from Jolpica API"
+        columns:
+          - name: race_id
+            description: "Unique race identifier"
+          - name: driver_id
+            description: "Driver identifier"
+          - name: lap
+            description: "Lap number when pit stop occurred"
+          - name: stop
+            description: "Pit stop number (1st, 2nd, etc.)"
+          - name: duration
+            description: "Pit stop duration in string format"
+          - name: time
+            description: "Time of day when pit stop occurred"

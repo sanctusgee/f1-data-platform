@@ -1,0 +1,10 @@
+
+// Purpose:
+// Optional seed file for dev/testing without live API calls.
+
+race_id,driver_id,lap,position,lap_time
+1,hamilton,1,1,1:31.123
+1,hamilton,2,1,1:30.890
+1,hamilton,3,1,1:31.000
+1,verstappen,1,2,1:31.456
+1,verstappen,2,2,1:31.200

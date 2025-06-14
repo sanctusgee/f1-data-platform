@@ -1,0 +1,20 @@
+# filename: models/schema.yml
+#Purpose:
+#Document all models. Add basic column-level docs and freshness tests.
+
+version: 2
+
+models:
+  - name: mart_driver_race_summary
+    description: "Top-level summary of driver performance per race"
+    columns:
+      - name: race_id
+        description: "Unique race identifier"
+      - name: driver_id
+        description: "F1 driver code"
+      - name: avg_lap_time_ms
+        description: "Average lap time across all stints"
+      - name: stint_count
+        description: "How many stints the driver had"
+      - name: avg_degradation_rate
+        description: "Average correlation between lap number and lap time"

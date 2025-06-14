@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: mart_qualifying_consistency
+    description: "Driver consistency analysis under pressure"
+    columns:
+      - name: avg_consistency_coeff
+        description: "Normalized consistency metric"
+        tests:
+          - dbt_utils.not_null_proportion:
+              at_least: 0.5
+
+  - name: tire_strategy
+    columns:
+      - name: avg_overall_pace_ms
+        tests:
+          - not_null
